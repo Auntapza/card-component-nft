@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
 
-::root {
-    --Softblue: hsl(215, 51%, 70%);
+:root {
+    --Softblue : hsl(215, 51%, 70%);
     --mainbg : hsl(217, 54%, 11%);
     --cardbg : hsl(216, 50%, 16%);
     --linecolor : hsl(215, 32%, 27%);
@@ -18,16 +18,56 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: hsl(217, 54%, 11%);
+    background-color: var(--mainbg);
+    color: #fff;
+    height: 100vh;
 }
 
 p {
     font-size: 18px;
+    color: var(--Softblue);
+    font-weight: 300;
 }
 
 .card {
-    height: 100vh;
-    background-color: var(--card-bg);
-    border-radius: 20px;
+    display: grid;
+    gap: 20px;
+    background-color: var(--cardbg);
+    padding: 2rem;
+    border-radius: 25px;
 }
-
+.card > img {
+    border-radius: 15px;
+    width: 350px;
+}
+.price {
+    display: flex;
+    justify-content: space-between;
+}
+.price .eth-price,
+.price .day {
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+}
+.eth-price {
+    color: cyan;
+}
+.avatar {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    cursor: pointer;
+}
+.avatar img {
+    width: 40px;
+    border: 1px solid white;
+    border-radius: 50%;
+    transition: color .2s , border-color .1s;
+}
+.avatar:hover span {
+    color: cyan;
+}
+.avatar:hover img {
+    border-color: cyan;
+}
